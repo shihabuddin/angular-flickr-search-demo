@@ -4,11 +4,13 @@
   <title>Flickr Search</title>
 </head>
 <body data-ng-controller="Main">
-<label>
-  Name:
-  <input type="text" data-ng-model="name">
-</label>
-<h3 data-ng-show="name.length > 0">Hello {{name}}</h3>
+
+<ul>
+  <li data-ng-repeat="photo in photos">
+    {{photo || json}}
+  </li>
+</ul>
+
 <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.js"></script>
 <script type="text/javascript" src="webjars/angularjs/1.2.26/angular.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
