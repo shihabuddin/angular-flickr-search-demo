@@ -14,10 +14,10 @@
 <body data-ng-controller="Main">
 
 <ul>
-  <li data-ng-repeat="photo in photos" data-ng-show="photo.thumbnail.source">
-    <img data-ng-src="{{photo.thumbnail.source}}"
-         width="{{photo.thumbnail.width}}"
-         height="{{photo.thumbnail.height}}"
+  <li data-ng-repeat="photo in photos">
+    <img src="gfx/spinner.gif"
+         data-spinner="photo.thumbnail.source"
+         width="100"
          title="{{photo.title}}"
          alt="{{photo.title}}"/>
   </li>

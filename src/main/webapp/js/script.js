@@ -19,6 +19,28 @@ app.factory('flickr', ['$http', function ($http) {
   };
 }]);
 
+app.directive('spinner', ['$parse', function ($parse) {
+  return {
+    restrict: 'A',
+    link: function ($scope, element, attributes) {
+      if (element.prop('tagName') != 'IMG') {
+        return;
+      }
+      var spinner = attributes.src;
+      var load = function (url) {
+        if (url) {
+          element.attr('src', url);
+        }
+        else {
+          element.attr('src', spinner);
+        }
+      };
+      load($parse(attributes.spinner)($scope));
+      $scope.$watch(attributes.spinner, load);
+    }
+  }
+}]);
+
 app.controller('Main', ['$scope', 'flickr', function ($scope, flickr) {
   var loadPhoto = function (photo) {
     flickr.thumbnail(photo.id).then(function (thumbnail) {
