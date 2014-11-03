@@ -7,7 +7,11 @@
 
 <ul>
   <li data-ng-repeat="photo in photos">
-    {{photo || json}}
+    <img data-ng-src="{{photo.thumbnail.source}}"
+         width="{{photo.thumbnail.width}}"
+         height="{{photo.thumbnail.height}}"
+         title="{{photo.title}}"
+         alt="{{photo.title}}"/>
   </li>
 </ul>
 
