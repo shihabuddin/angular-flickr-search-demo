@@ -6,7 +6,7 @@
 <body data-ng-controller="Main">
 
 <ul>
-  <li data-ng-repeat="photo in photos">
+  <li data-ng-repeat="photo in photos" data-ng-show="photo.thumbnail.source">
     <img data-ng-src="{{photo.thumbnail.source}}"
          width="{{photo.thumbnail.width}}"
          height="{{photo.thumbnail.height}}"
