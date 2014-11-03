@@ -13,6 +13,14 @@
 </head>
 <body data-ng-controller="Main">
 
+<div>
+  <label>
+    Enter Tags
+    <input type="text" data-ng-model="tags">
+  </label>
+  <button data-ng-click="search(tags)">Search</button>
+</div>
+
 <ul>
   <li data-ng-repeat="photo in photos">
     <img src="gfx/spinner.gif"

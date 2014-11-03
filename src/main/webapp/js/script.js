@@ -48,10 +48,12 @@ app.controller('Main', ['$scope', 'flickr', function ($scope, flickr) {
     });
   };
 
-  flickr.search('bangladesh').then(function (photos) {
-    $scope.photos = photos;
-    for (var i = 0; i < photos.length; i++) {
-      loadPhoto(photos[i]);
-    }
-  });
+  $scope.search = function(tags){
+    flickr.search(tags).then(function (photos) {
+      $scope.photos = photos;
+      for (var i = 0; i < photos.length; i++) {
+        loadPhoto(photos[i]);
+      }
+    });
+  };
 }]);
